@@ -33,11 +33,11 @@ class BotStrategy(object):
 				openTrades.append(trade)
 
 		if (len(openTrades) < self.numSimulTrades):
-			if (self.currentPrice < self.indicators.movingAverage(self.prices,15)):
+			if (self.indicators.movingAverage(self.prices,30) < self.indicators.movingAverage(self.prices,15)):
 				self.trades.append(BotTrade(self.currentPrice,stopLoss=.0001))
 
 		for trade in openTrades:
-			if (self.currentPrice > self.indicators.movingAverage(self.prices,15)):
+			if (self.indicators.movingAverage(self.prices,30) > self.indicators.movingAverage(self.prices,15)):
 				trade.close(self.currentPrice)
 
 	def updateOpenTrades(self):

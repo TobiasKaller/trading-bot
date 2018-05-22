@@ -8,7 +8,7 @@ class BotChart(object):
 		self.pair = pair
 		self.period = period
 
-		self.startTime = 1521048000
+		self.startTime = 1516620941
 		self.endTime = 1526985341
 
 		self.data = []
